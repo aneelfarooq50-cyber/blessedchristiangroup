@@ -560,7 +560,82 @@ width:300%;
 max-width:800px;
 height:auto;
 }
+/* ================= MOBILE FIX ================= */
 
+@media(max-width:768px){
+
+.main-box{
+padding:10px;
+}
+
+.row{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.box{
+width:100%;
+min-height:auto;
+padding:20px;
+}
+
+.photos,
+.gallery,
+.campaign{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.photos img,
+.gallery img,
+.campaign img,
+.photos video,
+.gallery video,
+.campaign video{
+height:180px;
+}
+
+.title h1{
+font-size:28px;
+line-height:1.1;
+}
+
+.title p{
+font-size:16px;
+}
+
+h2{
+font-size:42px;
+}
+
+.box h2{
+font-size:42px;
+}
+
+.box p{
+font-size:22px;
+line-height:1.4;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+padding:18px 10px;
+}
+
+nav a{
+font-size:22px;
+}
+
+.logo img{
+width:70px;
+height:70px;
+}
+
+}
 </style>
 </head>
 
