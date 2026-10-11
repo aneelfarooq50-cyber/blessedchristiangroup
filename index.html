@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Blessed Christian Group</title>
+
 <link rel="icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 /* ================= RESET ================= */
+
 *{
 margin:0;
 padding:0;
@@ -20,79 +24,38 @@ scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:url('bg5.jpg') center/cover no-repeat fixed;
+font-family:Arial,sans-serif;
+background:url('bg5.jpg') center/cover fixed;
 color:white;
+overflow-x:hidden;
 }
 
-.main-box{
-max-width:1400px;
-margin:auto;
-padding:30px;
-}
-
-.row{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-align-items:start;
-}
-
-.box{
-background:rgba(0,0,0,0.55);
-padding:20px;
-border-radius:20px;
-text-align:center;
-min-height:650px;
-}
-
-.box h2{
-font-size:32px;
-margin-bottom:10px;
-}
-
-.box p{
-font-size:18px;
-line-height:1.3;
-margin-bottom:18px;
-}
-
-.photos{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-.photos img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:12px;
-}
-
-/* mobile */
-@media(max-width:900px){
-.row{
-grid-template-columns:1fr;
-}
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.72);
+z-index:-1;
 }
 
 /* ================= HEADER ================= */
+
 header{
-background:rgba(6,16,29,0.92);
+position:sticky;
+top:0;
+z-index:9999;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 25px;
-position:sticky;
-top:0;
-z-index:999;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,215,0,0.2);
 }
 
 .logo img{
-width:75px;
-height:75px;
+width:80px;
+height:80px;
 border-radius:50%;
 background:white;
 padding:4px;
@@ -106,190 +69,330 @@ text-align:center;
 
 .title h1{
 font-size:52px;
+color:#ffd54a;
 font-weight:900;
 }
 
 .title p{
 font-size:18px;
-color:#dbeafe;
 margin-top:5px;
 }
 
 /* ================= NAV ================= */
+
 nav{
-background:rgba(12,24,48,0.92);
-text-align:center;
-padding:16px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+padding:18px;
+background:rgba(0,0,0,0.75);
 }
 
 nav a{
-color:white;
 text-decoration:none;
-font-size:22px;
+color:white;
+font-size:21px;
 font-weight:bold;
-margin:0 14px;
+transition:0.3s;
 }
 
 nav a:hover{
-color:#38bdf8;
-}
-
-/* ================= LAYOUT ================= */
-.wrapper{
-max-width:1450px;
-margin:auto;
-padding:15px;
-}
-
-.box{
-background:rgba(0,0,0,0.55);
-padding:30px;
-border-radius:22px;
-margin-bottom:18px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-h2{
-text-align:center;
-font-size:48px;
-margin-bottom:20px;
+color:#ffd54a;
 }
 
 /* ================= HERO ================= */
+
 .hero{
+height:92vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:80px 20px;
+padding:20px;
 }
 
 .hero h2{
-font-size:72px;
+font-size:90px;
+color:#ffd54a;
 margin-bottom:20px;
+text-shadow:0 0 20px black;
 }
 
 .hero p{
 font-size:28px;
-margin-bottom:28px;
+max-width:950px;
+line-height:1.6;
 }
 
-/* ================= BUTTON ================= */
-.btn{
-padding:16px 35px;
+.hero button{
+margin-top:30px;
+padding:18px 45px;
 font-size:24px;
-background:#2563eb;
-color:white;
 border:none;
-border-radius:12px;
-cursor:pointer;
+border-radius:14px;
+background:#ffd54a;
 font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
-.btn:hover{
-background:#1d4ed8;
+.hero button:hover{
+transform:scale(1.05);
+background:white;
 }
 
-/* ================= GRID ================= */
-.grid3{
+/* ================= WRAPPER ================= */
+
+.wrapper{
+max-width:1500px;
+margin:auto;
+padding:20px;
+}
+
+.box{
+background:rgba(0,0,0,0.55);
+padding:35px;
+border-radius:25px;
+margin-bottom:30px;
+border:1px solid rgba(255,215,0,0.15);
+backdrop-filter:blur(5px);
+}
+
+h2{
+text-align:center;
+font-size:55px;
+margin-bottom:20px;
+color:#ffd54a;
+}
+
+.gold{
+text-align:center;
+font-size:24px;
+margin-bottom:25px;
+color:#ffd54a;
+}
+
+/* ================= ROW ================= */
+
+.row{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:10px;
+gap:25px;
 }
 
-.card{
-background:rgba(255,255,255,0.03);
-padding:14px;
-border-radius:10px;
-border:0.5px solid rgba(255,255,255,0.08);
+.cardBox{
+background:rgba(255,255,255,0.04);
+padding:22px;
+border-radius:22px;
 text-align:center;
 }
 
-.card h3{
-font-size:24px;
-margin-bottom:4px;
+.cardBox h3{
+font-size:34px;
+margin-bottom:12px;
+color:#ffd54a;
 }
 
-.card p{
+.cardBox p{
 font-size:20px;
-line-height:0.8;
+line-height:1.6;
+margin-bottom:18px;
 }
 
 /* ================= IMAGES ================= */
-.mini,
+
+.photos,
 .gallery,
-.campaign{
+.campaign,
+.video-grid{
 display:grid;
-gap:12px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
 
-.mini{
-grid-template-columns:repeat(4,1fr);
-margin-top:15px;
-}
-
-.gallery{
-grid-template-columns:repeat(4,1fr);
-}
-
-.campaign{
-grid-template-columns:repeat(4,1fr);
-}
-
-.mini img,
+.photos img,
 .gallery img,
-.campaign img{
+.campaign img,
+.photos video,
+.gallery video,
+.campaign video,
+.video-grid video{
 width:100%;
-height:170px;
+height:240px;
 object-fit:cover;
+border-radius:16px;
+cursor:pointer;
+transition:0.3s;
+background:black;
+}
+
+.photos img:hover,
+.gallery img:hover,
+.campaign img:hover{
+transform:scale(1.03);
+}
+
+.hidden{
+display:none;
+}
+
+.morePhotosBtn{
+margin-top:18px;
+padding:12px 25px;
+font-size:18px;
+font-weight:bold;
+background:#ffd54a;
+border:none;
 border-radius:12px;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* ================= OTHER ================= */
-.gold{
-text-align:center;
-color:#ffd54a;
-font-size:24px;
-margin-bottom:15px;
+.morePhotosBtn:hover{
+background:white;
 }
 
-.list li{
-font-size:22px;
-margin:12px 0;
-}
+/* ================= PROJECT ================= */
 
-.social a{
-display:block;
-background:#132442;
-padding:14px;
-border-radius:12px;
-margin:10px 0;
-text-align:center;
-color:white;
-text-decoration:none;
-font-size:22px;
-}
-
-.social a:hover{
-background:#2563eb;
-}
-
-.contact p{
-font-size:22px;
-margin:12px 0;
+.project-box{
 text-align:center;
 }
 
-/* ================= FOOTER ================= */
-footer{
-background:rgba(255,255,255,0.95);
-color:black;
-text-align:center;
-padding:22px;
-font-size:22px;
-font-weight:bold;
+.project-img{
+width:100%;
+max-width:850px;
+border-radius:20px;
 margin-top:20px;
 }
 
-/* ================= IMAGE POPUP ================= */
+/* ================= DONATE FLOAT ================= */
+
+.floatingDonate{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#ffd54a;
+color:black;
+padding:16px 24px;
+border-radius:50px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+z-index:999999;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.floatingDonate:hover{
+transform:scale(1.05);
+background:white;
+}
+
+/* ================= DONATION ================= */
+
+.donation-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.donation-card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:22px;
+text-align:center;
+}
+
+.donation-card h3{
+font-size:48px;
+color:#ffd54a;
+margin-bottom:10px;
+}
+
+.donation-card p{
+font-size:20px;
+margin-bottom:18px;
+}
+
+.donation-card button,
+.moreBtn{
+padding:15px 30px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+background:#ffd54a;
+cursor:pointer;
+transition:0.3s;
+}
+
+.donation-card button:hover,
+.moreBtn:hover{
+background:white;
+transform:scale(1.03);
+}
+
+.moreDonation{
+display:none;
+margin-top:25px;
+}
+
+/* ================= SOCIAL ================= */
+
+.social{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin-top:20px;
+}
+
+.social a{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+background:#111827;
+border-radius:50%;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social a:hover{
+background:#ffd54a;
+color:black;
+transform:translateY(-5px);
+}
+
+/* ================= CONTACT ================= */
+
+.contact-text{
+font-size:24px;
+text-align:center;
+line-height:2;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:black;
+text-align:center;
+padding:35px;
+margin-top:30px;
+}
+
+footer img{
+width:80px;
+margin-bottom:10px;
+}
+
+/* ================= POPUP ================= */
+
 .popup{
 display:none;
 position:fixed;
@@ -297,8 +400,8 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.92);
-z-index:9999;
+background:rgba(0,0,0,0.96);
+z-index:99999;
 }
 
 .popup img{
@@ -308,18 +411,19 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-border-radius:14px;
+border-radius:16px;
 }
 
 .close,
 .left,
 .right{
 position:absolute;
-font-size:42px;
-padding:10px 16px;
+font-size:45px;
+padding:10px 18px;
 background:rgba(255,255,255,0.15);
-border-radius:10px;
+border-radius:12px;
 cursor:pointer;
+user-select:none;
 }
 
 .close{
@@ -341,6 +445,7 @@ transform:translateY(-50%);
 }
 
 /* ================= DONATE POPUP ================= */
+
 .donatePopup{
 display:none;
 position:fixed;
@@ -348,217 +453,113 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.88);
-z-index:99999;
+background:rgba(0,0,0,0.92);
+z-index:999999;
+overflow:auto;
 }
 
 .donateBox{
-background:white;
-color:black;
-max-width:420px;
-margin:10% auto;
-padding:30px;
-border-radius:18px;
-text-align:center;
+max-width:650px;
+background:#111827;
+margin:4% auto;
+padding:35px;
+border-radius:25px;
 }
 
 .donateBox h3{
-font-size:34px;
-margin-bottom:15px;
-color:#2563eb;
-}
-
-.donateBox p{
-font-size:22px;
-margin:12px 0;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-
-.title h1{
-font-size:28px;
-}
-
-.title p{
-font-size:14px;
-}
-
-nav a{
-font-size:16px;
-margin:0 7px;
-}
-
-.hero h2{
-font-size:40px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.grid3,
-.gallery,
-.campaign{
-grid-template-columns:1fr;
-}
-
-.mini{
-grid-template-columns:repeat(2,1fr);
-}
-
-.btn{
-font-size:18px;
-}
-
-h2{
-font-size:34px;
-}
-
-}
-
-.photos img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.photos img:hover{
-transform:scale(1.03);
-}
-
-/* popup */
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.92);
-z-index:9999;
-}
-
-.popup img{
-max-width:90%;
-max-height:85%;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-border-radius:15px;
-}
-
-.closeBtn,
-.leftBtn,
-.rightBtn{
-position:absolute;
-color:white;
 font-size:42px;
-cursor:pointer;
-padding:10px 18px;
-background:rgba(255,255,255,0.15);
-border-radius:10px;
-user-select:none;
-}
-
-.photos img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.photos img:hover{
-transform:scale(1.03);
-}
-
-/* popup */
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.92);
-z-index:9999;
-}
-
-.popup img{
-max-width:90%;
-max-height:85%;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-border-radius:15px;
-}
-
-.closeBtn,
-.leftBtn,
-.rightBtn{
-position:absolute;
-color:white;
-font-size:42px;
-cursor:pointer;
-padding:10px 18px;
-background:rgba(255,255,255,0.15);
-border-radius:10px;
-user-select:none;
-}
-
-.closeBtn{
-top:20px;
-right:20px;
-background:red;
-}
-
-.leftBtn{
-left:20px;
-top:50%;
-transform:translateY(-50%);
-}
-
-.rightBtn{
-right:20px;
-top:50%;
-transform:translateY(-50%);
-}
-
-video{
-width:100%;
-max-width:100%;
-height:auto;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,0.35);
-outline:none;
-margin-top:15px;
-}
-
-.video-box{
-background:rgba(0,0,0,0.55);
-padding:25px;
-border-radius:22px;
+color:#ffd54a;
+text-align:center;
 margin-bottom:20px;
 }
 
-.video-title{
-text-align:center;
-font-size:42px;
-margin-bottom:18px;
-color:white;
+.payBox{
+background:rgba(255,255,255,0.06);
+padding:20px;
+border-radius:18px;
+margin-top:15px;
 }
 
-.myphoto{
-width:300%;
-max-width:800px;
-height:auto;
+.payBox h4{
+font-size:24px;
+margin-bottom:10px;
+color:#ffd54a;
+}
+
+.payBox p,
+.payBox li{
+font-size:18px;
+line-height:1.8;
+}
+
+.closeDonateBtn{
+width:100%;
+padding:15px;
+font-size:22px;
+margin-top:20px;
+background:red;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.row{
+grid-template-columns:1fr;
+}
+
+.hero h2{
+font-size:50px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.title h1{
+font-size:30px;
+}
+
+h2{
+font-size:38px;
+}
+
+nav a{
+font-size:17px;
+}
+
+.photos,
+.gallery,
+.campaign,
+.video-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.photos img,
+.gallery img,
+.campaign img,
+.photos video,
+.gallery video,
+.campaign video,
+.video-grid video{
+height:180px;
+}
+
+.contact-text{
+font-size:20px;
+}
+
+.floatingDonate{
+font-size:18px;
+padding:14px 20px;
+right:12px;
+bottom:12px;
+}
+
 }
 
 </style>
@@ -566,7 +567,14 @@ height:auto;
 
 <body>
 
+<!-- FLOATING DONATE BUTTON -->
+
+<div class="floatingDonate" onclick="showDonate()">
+Donate
+</div>
+
 <!-- HEADER -->
+
 <header>
 
 <div class="logo">
@@ -585,155 +593,434 @@ height:auto;
 </header>
 
 <!-- NAV -->
+
 <nav>
 <a href="#about">About</a>
 <a href="#gallery">Gallery</a>
 <a href="#projects">Projects</a>
-<a href="#" onclick="()"></a>
+<a href="#protect">Protect Girls</a>
+<a href="#help">Help Request</a>
+<a href="#donate">Donate</a>
 <a href="#contact">Contact</a>
-<a href="#social">Follow</a>
 </nav>
-
-<div class="wrapper">
 
 <!-- HERO -->
 
+<section class="hero">
 
-<!-- MISSION -->
+<h2>Blessed Christian Group</h2>
+
+<p>
+Helping families, supporting communities, promoting the gospel,
+and protecting Christian girls through faith, love, and service.
+</p>
+
+<button onclick="document.getElementById('donate').scrollIntoView()">
+Support Families
+</button>
+
+</section>
+
+<div class="wrapper">
+
+<!-- OUR MISSION -->
+
 <section class="box" id="about">
+
+<h2>Marriage Support</h2>
+
+<p>
+Helping Christian families with marriage support,
+essential items, financial assistance and guidance
+for a better future.
+</p>
+
+<div class="photos">
+<img src="pic25.jpeg" onclick="openImg(this.src)">
+<img src="pic23.jpeg" onclick="openImg(this.src)">
+<img src="pic22.jpeg" onclick="openImg(this.src)">
+
+</div>
+
 
 <h2>Our Mission</h2>
 
-<div class="main-box">
-
 <div class="row">
 
-<div class="box">
-<h2>Family Support</h2>
-<p>Helping families with financial assistance, medical assistance and groceries.</p>
+<!-- FAMILY SUPPORT -->
+
+<div class="cardBox">
+
+<h3>Family Support</h3>
+
+<p>
+Providing groceries, medical aid, emergency assistance,
+and financial support for families in need.
+</p>
 
 <div class="photos">
+
 <img src="pic5.jpeg" onclick="openImg(this.src)">
 <img src="pic6.jpeg" onclick="openImg(this.src)">
 <img src="pic2.png" onclick="openImg(this.src)">
-<video width="100%" controls autoplay loop style="border-radius:18px;">
+<img src="pic6.jpeg" class="hidden familyMore" onclick="openImg(this.src)">
+<img src="pic9.jpeg" class="hidden familyMore" onclick="openImg(this.src)">
+
+<video controls autoplay loop muted class="hidden familyMore">
 <source src="video7.mp4" type="video/mp4">
 </video>
-</div>
+
 </div>
 
-<div class="box">
-<h2>Promoting Gospel</h2>
-<p>We help new gospel worshippers financially and support them in recording audio and video content.</p>
+<button class="morePhotosBtn" onclick="togglePhotos('familyMore',this)">
++ More
+</button>
+
+</div>
+
+<!-- GOSPEL -->
+
+<div class="cardBox">
+
+<h3>Gospel Outreach</h3>
+
+<p>
+Supporting worship programs, Christian media,
+prayer events, and spiritual encouragement.
+</p>
 
 <div class="photos">
+
 <img src="pic1.jpeg" onclick="openImg(this.src)">
-<img src="pic17.jpeg" onclick="openImg(this.src)">
 <img src="pic15.jpeg" onclick="openImg(this.src)">
-<video width="100%" controls autoplay loop style="border-radius:18px;">
+<img src="pic17.jpeg" onclick="openImg(this.src)">
+
+<video controls autoplay loop muted class="hidden gospelMore">
 <source src="video6.mp4" type="video/mp4">
-</div>
+</video>
+
 </div>
 
-<div class="box">
-<h2>Stand with Community</h2>
-<p>We raise voice for our Christian community and always there in difficult times.</p>
+<button class="morePhotosBtn" onclick="togglePhotos('gospelMore',this)">
++ More
+</button>
+
+</div>
+
+<!-- COMMUNITY -->
+
+<div class="cardBox">
+
+<h3>Community Care</h3>
+
+<p>
+Standing with Christian communities during difficult times
+through support, awareness, and community outreach.
+</p>
 
 <div class="photos">
+
 <img src="pic13.jpeg" onclick="openImg(this.src)">
 <img src="pic7.jpeg" onclick="openImg(this.src)">
 <img src="pic16.jpeg" onclick="openImg(this.src)">
-<video controls>
+<img src="pic12.jpeg" onclick="openImg(this.src)">
+
+<img src="pic14.jpeg" class="hidden communityMore" onclick="openImg(this.src)">
+<img src="pic8.jpeg" class="hidden communityMore" onclick="openImg(this.src)">
+
+<video controls autoplay loop muted class="hidden communityMore">
 <source src="video8.mp4" type="video/mp4">
 </video>
 
 </div>
 
-</div>
+<button class="morePhotosBtn" onclick="togglePhotos('communityMore',this)">
++ More
+</button>
+
 </div>
 
 </div>
-</div>
+
 </section>
 
-<!-- PROTECT -->
-<section class="box">
+<!-- PROTECT GIRLS -->
+
+<section class="box" id="protect">
 
 <h2>Protect Christian Girls</h2>
-<div class="gold">Justice, Protection, and Hope for Every Girl.</div>
+
+<div class="gold">
+Justice • Protection • Hope
+</div>
 
 <div class="campaign">
+
 <img src="camp1.jpg" onclick="openImg(this.src)">
-<img src="pic13.jpeg" onclick="openImg(this.src)">
 <img src="pic14.jpeg" onclick="openImg(this.src)">
-<video width="100%" controls autoplay loop style="border-radius:12px;">
+<img src="pic16.jpeg" class="hidden protectMore" onclick="openImg(this.src)">
+
+<video controls autoplay loop muted class="hidden protectMore">
 <source src="video3.mp4" type="video/mp4">
+</video>
+
+<video controls autoplay loop muted class="hidden protectMore">
+<source src="video11.mp4" type="video/mp4">
+</video>
 
 </div>
+
+<center>
+<button class="morePhotosBtn" onclick="togglePhotos('protectMore',this)">
++ More
+</button>
+</center>
 
 </section>
 
 <!-- GALLERY -->
+
 <section class="box" id="gallery">
 
 <h2>Our Gallery</h2>
 
 <div class="gallery">
+
 <img src="pic1.jpeg" onclick="openImg(this.src)">
 <img src="pic2.png" onclick="openImg(this.src)">
-<img src="logo.png" onclick="openImg(this.src)">
+<img src="pic5.jpeg" onclick="openImg(this.src)">
+<img src="pic6.jpeg" onclick="openImg(this.src)">
+<img src="pic7.jpeg" onclick="openImg(this.src)">
+<img src="pic8.jpeg" onclick="openImg(this.src)">
 <img src="pic9.jpeg" onclick="openImg(this.src)">
+<img src="pic10.jpeg" onclick="openImg(this.src)">
+<img src="pic11.jpeg" onclick="openImg(this.src)">
+<img src="pic12.jpeg" onclick="openImg(this.src)">
+
+</div>
+
+</section>
+
+<!-- VIDEOS -->
+
+<section class="box">
+
+<h2>Videos</h2>
+
+<div class="video-grid">
+
+<video controls>
+<source src="video6.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video7.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video8.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video10.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video11.mp4" type="video/mp4">
+</video>
+
 </div>
 
 </section>
 
 <!-- PROJECTS -->
-<section class="box list" id="projects">
+
+<section class="box" id="projects">
 
 <h2>Upcoming Projects</h2>
 
-<ul>
-<li>Orphanage Center</li>
-<img src="pic21.jpeg" class="myphoto">
+<div class="project-box">
 
+<div class="gold">
+Helping More Families Through Future Missions
+</div>
 
-</ul>
+<h3 style="font-size:36px;margin-bottom:15px;">
+Orphanage Center
+</h3>
+
+<p style="font-size:22px;line-height:1.8;max-width:900px;margin:auto;">
+Our goal is to build a safe and loving orphanage center
+that provides shelter, education, food, medical support,
+and hope for children in need.
+</p>
+
+<img src="pic26.jpeg" class="project-img" onclick="openImg(this.src)">
+
+</div>
+
+</section>
+<!-- HELP REQUEST SECTION -->
+
+<section class="box" id="help">
+
+<h2>Help Request</h2>
+
+<div class="gold">
+Submit Your Video Request For Help
+</div>
+
+<p style="text-align:center;font-size:22px;line-height:1.8;max-width:900px;margin:auto;margin-bottom:30px;">
+If your family needs help, you can send a short video request.
+Our team will review your request and contact you if support is available.
+</p>
+
+<div style="max-width:850px;margin:auto;background:rgba(255,255,255,0.05);padding:35px;border-radius:22px;">
+
+<form action="https://formsubmit.co/blessedchristians903@gmail.com" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Help Request">
+
+<input type="text" name="name" placeholder="Full Name" required
+style="width:100%;padding:18px;margin-bottom:18px;border:none;border-radius:12px;font-size:18px;background:rgba(255,255,255,0.08);color:white;">
+
+<input type="email" name="email" placeholder="Email Address" required
+style="width:100%;padding:18px;margin-bottom:18px;border:none;border-radius:12px;font-size:18px;background:rgba(255,255,255,0.08);color:white;">
+
+<textarea name="message" placeholder="Write your help request..." required
+style="width:100%;height:180px;padding:18px;margin-bottom:18px;border:none;border-radius:12px;font-size:18px;resize:none;background:rgba(255,255,255,0.08);color:white;"></textarea>
+
+<input type="file" name="attachment" accept="video/*" required
+style="width:100%;padding:15px;margin-bottom:22px;border-radius:12px;background:rgba(255,255,255,0.08);color:white;">
+
+<button type="submit"
+style="width:100%;padding:18px;font-size:22px;font-weight:bold;border:none;border-radius:14px;background:#ffd54a;cursor:pointer;">
+Send Help Request
+</button>
+
+</form>
+
+</div>
 
 </section>
 
-<!-- SOCIAL -->
-<section class="box social" id="social">
+<!-- DONATE -->
 
-<h2>Follow Us</h2>
+<section class="box" id="donate">
 
-<a href="https://www.instagram.com/blessedchristiangroup?igsh=YjA2Mmt0eDhhN2Zw" target="_blank">Instagram</a>
+<h2>Support a Family</h2>
 
-<a href="https://youtube.com/@blessedchristiangroup?si=T5gIh0n4X0ADbPGx" target="_blank">YouTube</a>
+<div class="gold">
+Monthly Auto Payment Available
+</div>
 
-<a href="https://www.tiktok.com/@love.to.serve1?_r=1&_t=ZT-95dQHPrn60E" target="_blank">TikTok</a>
+<div class="donation-grid">
+
+<div class="donation-card">
+
+<h3></h3>
+
+<p>Support groceries for one family.</p>
+
+<button onclick="showDonate()">
+Donate
+</button>
+
+</div>
+
+<div class="donation-card">
+
+<h3></h3>
+
+<p>Help emergency assistance programs.</p>
+
+<button onclick="showDonate()">
+Donate
+</button>
+
+</div>
+
+<div class="donation-card">
+
+<h3></h3>
+
+<p>Provide medical and food support.</p>
+
+<button onclick="showDonate()">
+Donate
+</button>
+
+</div>
+
+<div class="donation-card">
+
+<h3></h3>
+
+<p>Support orphanage and future projects.</p>
+
+<button onclick="showDonate()">
+Donate
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- CONTACT -->
-<section class="box contact" id="contact">
+
+<section class="box" id="contact">
 
 <h2>Contact Us</h2>
 
-<p>Email: blessedchristians903@gmail.com</p>
+<p class="contact-text">
+Email: blessedchristians903@gmail.com
+</p>
+
+<div class="social">
+
+<a href="https://www.instagram.com/blessedchristiangroup?igsh=YjA2Mmt0eDhhN2Zw" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://youtube.com/@blessedchristiangroup?si=T5gIh0n4X0ADbPGx" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://www.tiktok.com/@love.to.serve1?_r=1&_t=ZT-95dQHPrn60E" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+
+</div>
 
 </section>
 
 </div>
+
 <!-- FOOTER -->
+
 <footer>
-<img src="logo.png" width="40"><br>
+
+<img src="logo.png">
+
+<p>
 © Blessed Christian Group | ANEEL FAROOQ
+</p>
+
 </footer>
 
 <!-- IMAGE POPUP -->
+
 <div class="popup" id="popup">
 
 <span class="close" onclick="closeImg()">✖</span>
+
 <span class="left" onclick="prevImg()">❮</span>
 
 <img id="bigImg">
@@ -743,18 +1030,63 @@ height:auto;
 </div>
 
 <!-- DONATE POPUP -->
+
 <div class="donatePopup" id="donatePopup">
 
 <div class="donateBox">
 
-<h3>Donation Info</h3>
+<h3>Donation Information</h3>
 
-<p><b>Zelle:</b> +1 </p>
-<p><b>EasyPaisa:</b> 03 </p>
+<div class="payBox">
 
-<br>
+<h4>Zelle</h4>
 
-<button class="btn" onclick="closeDonate()">Close</button>
+<p>+1 YOUR NUMBER HERE</p>
+
+</div>
+
+<div class="payBox">
+
+<h4>EasyPaisa</h4>
+
+<p>03XXXXXXXXX</p>
+
+</div>
+
+<div class="payBox">
+
+<h4>Bank Transfer</h4>
+
+<p>
+Bank Name: YOUR BANK NAME<br>
+Account Title: Blessed Christian Group<br>
+Account Number: XXXXXXXXXXXX<br>
+Routing Number: XXXXXXXXX
+</p>
+
+</div>
+
+<div class="payBox">
+
+<h4>Auto Monthly Payment</h4>
+
+<ul>
+
+<li>Choose recurring monthly payment from your bank or app</li>
+
+<li>Automatically support families every month</li>
+
+<li>Cancel anytime through your payment provider</li>
+
+<li>Available through Zelle or bank transfer</li>
+
+</ul>
+
+</div>
+
+<button class="closeDonateBtn" onclick="closeDonate()">
+Close
+</button>
 
 </div>
 
@@ -762,11 +1094,12 @@ height:auto;
 
 <script>
 
-/* IMAGE POPUP */
+/* ================= IMAGE POPUP ================= */
+
 let images = [
+
 "pic1.jpeg",
 "pic2.png",
-"logo.png",
 "pic3.jpeg",
 "pic4.jpeg",
 "pic5.jpeg",
@@ -787,10 +1120,17 @@ let images = [
 "pic20.jpeg",
 "pic21.jpeg",
 "pic22.jpeg",
+"pic23.jpeg",
+"pic24.jpeg",
+"pic25.jpeg",
+"pic26.jpeg",
+"pic27.jpeg",
 "camp1.jpg",
 "camp2.jpg",
 "camp3.jpg",
-"camp4.jpg"
+"camp4.jpg",
+"logo.png"
+
 ];
 
 let current = 0;
@@ -801,13 +1141,20 @@ let file = src.split('/').pop();
 
 current = images.indexOf(file);
 
-document.getElementById("popup").style.display="block";
-document.getElementById("bigImg").src = images[current];
+if(current < 0){
+current = 0;
+}
+
+document.getElementById('popup').style.display='block';
+
+document.getElementById('bigImg').src=images[current];
 
 }
 
 function closeImg(){
-document.getElementById("popup").style.display="none";
+
+document.getElementById('popup').style.display='none';
+
 }
 
 function nextImg(){
@@ -818,7 +1165,7 @@ if(current >= images.length){
 current = 0;
 }
 
-document.getElementById("bigImg").src = images[current];
+document.getElementById('bigImg').src=images[current];
 
 }
 
@@ -830,17 +1177,124 @@ if(current < 0){
 current = images.length - 1;
 }
 
-document.getElementById("bigImg").src = images[current];
+document.getElementById('bigImg').src=images[current];
 
 }
 
-/* DONATE POPUP */
+/* ================= DONATE ================= */
+
 function showDonate(){
-document.getElementById("donatePopup").style.display="block";
+
+document.getElementById('donatePopup').style.display='block';
+
 }
 
 function closeDonate(){
-document.getElementById("donatePopup").style.display="none";
+
+document.getElementById('donatePopup').style.display='none';
+
+}
+
+function toggleMoreDonation(){
+
+let more = document.getElementById('moreDonation');
+
+if(more.style.display === 'block'){
+
+more.style.display='none';
+
+}else{
+
+more.style.display='block';
+
+}
+
+}
+
+/* ================= MORE PHOTOS ================= */
+
+function togglePhotos(className,btn){
+
+let items = document.querySelectorAll('.' + className);
+
+items.forEach(item=>{
+
+if(item.classList.contains('hidden')){
+
+item.classList.remove('hidden');
+btn.innerHTML = 'Show Less';
+
+}else{
+
+item.classList.add('hidden');
+btn.innerHTML = '+ More';
+
+}
+
+});
+
+}
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener('keydown',function(e){
+
+if(e.key === 'Escape'){
+
+closeImg();
+closeDonate();
+
+}
+
+if(e.key === 'ArrowRight'){
+
+nextImg();
+
+}
+
+if(e.key === 'ArrowLeft'){
+
+prevImg();
+
+}
+
+});
+
+/* ================= MOBILE SWIPE ================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const popup = document.getElementById('popup');
+
+popup.addEventListener('touchstart',e=>{
+
+touchStartX = e.changedTouches[0].screenX;
+
+});
+
+popup.addEventListener('touchend',e=>{
+
+touchEndX = e.changedTouches[0].screenX;
+
+handleSwipe();
+
+});
+
+function handleSwipe(){
+
+if(touchEndX < touchStartX - 50){
+
+nextImg();
+
+}
+
+if(touchEndX > touchStartX + 50){
+
+prevImg();
+
+}
+
 }
 
 </script>
